@@ -43,13 +43,16 @@ public class MainActivity extends AppCompatActivity {
 
     private List<ModelSH> listSH = new ArrayList<>();
 
-    KendaliLogin KL = new KendaliLogin(MainActivity.this);
+    KendaliLogin KL = new KendaliLogin();
+
+    public static String keySPusername = "GtPJAx45lMjkuICbExYElQ==_username";
+    public static String keySPname = "GtPJAx45lMjkuICbExYElQ==_name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(KL.isLogin(KL.keySP_username) ==true){
+        if(KL.isLogin(MainActivity.this, keySPusername) ==true){
             setContentView(R.layout.activity_main);
 
             rvSH        = findViewById(R.id.rv_sh);
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             lmSH    = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             rvSH.setLayoutManager(lmSH);
 
-            tvWelcome.setText("Selamat Datang" + KL.getPref(KL.keySP_nama_lengkap));
+            tvWelcome.setText("Selamat Datang " + KL.getPref(MainActivity.this, keySPname));
 
             fabTambah.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -74,9 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v){
-                    KL.setPref(KL.keySP_username, null);
-                    KL.setPref(KL.keySP_nama_lengkap, null);
-                    KL.setPref(KL.keySP_email, null);
+                    KL.setPref(MainActivity.this, keySPusername, null);
+                    KL.setPref(MainActivity.this, keySPname, null);
                     startActivity(new Intent(MainActivity.this, LoginActivity.class));
                     finish();
                 }

@@ -26,6 +26,12 @@
         android:textSize="21sp"/>
 
     <EditText
+        android:id="@+id/et_sutradara"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama Sutradara"
+        android:textSize="21sp"/>
+    <EditText
         android:id="@+id/et_deskripsi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,12 +52,6 @@
         android:hint="Jumlah Episode"
         android:textSize="21sp"/>
 
-    <EditText
-        android:id="@+id/et_ulasan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ulasan"
-        android:textSize="21sp"/>
 
     <Button
         android:id="@+id/btn_ubah"

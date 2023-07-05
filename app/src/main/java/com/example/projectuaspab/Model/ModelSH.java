@@ -2,11 +2,13 @@ package com.example.projectuaspab.Model;
 
 public class ModelSH {
 
-    private String id, judul, deskripsi, pemeran, jumlah_episode, ulasan;
+    private String id, judul, deskripsi, pemeran, jumlah_episode, sutradara;
 
     public String getId() { return id; }
 
     public String getJudul() { return judul; }
+
+    public String getSutradara() { return sutradara; }
 
     public String getDeskripsi() { return deskripsi; }
 
@@ -14,6 +16,5 @@ public class ModelSH {
 
     public String getJumlah_episode() { return jumlah_episode; }
 
-    public String getUlasan() { return ulasan; }
 
 }

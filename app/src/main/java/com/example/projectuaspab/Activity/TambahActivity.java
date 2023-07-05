@@ -19,11 +19,11 @@ import retrofit2.Response;
 
 public class TambahActivity extends AppCompatActivity {
 
-    private EditText etJudul, etDeskripsi, etPemeran, etJumlahEpisode, etUlasan;
+    private EditText etJudul, etDeskripsi, etPemeran, etJumlahEpisode, etSutradara;
 
     private Button btnSimpan;
 
-    private String judul, deskripsi, pemeran, jumlah_episode, ulasan;
+    private String judul, deskripsi, pemeran, jumlah_episode, sutradara;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,22 +31,25 @@ public class TambahActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tambah);
 
         etJudul = findViewById(R.id.et_judul);
+        etSutradara = findViewById(R.id.et_sutradara);
         etDeskripsi = findViewById(R.id.et_deskripsi);
         etPemeran = findViewById(R.id.et_pemeran);
         etJumlahEpisode = findViewById(R.id.et_jumlah_episode);
-        etUlasan = findViewById(R.id.et_ulasan);
 
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 judul = etJudul.getText().toString();
+                sutradara = etSutradara.getText().toString();
                 deskripsi = etDeskripsi.getText().toString();
                 pemeran = etPemeran.getText().toString();
                 jumlah_episode = etJumlahEpisode.getText().toString();
-                ulasan = etUlasan.getText().toString();
 
                 if(judul.trim().isEmpty()){
                     etJudul.setError("Judul Tidak Boleh Kosong");
+                }
+                else if(sutradara.trim().isEmpty()){
+                    etDeskripsi.setError("Sutradara Tidak Boleh Kosong");
                 }
                 else if(deskripsi.trim().isEmpty()){
                     etDeskripsi.setError("Deskripsi Tidak Boleh Kosong");
@@ -57,9 +60,6 @@ public class TambahActivity extends AppCompatActivity {
                 else if(jumlah_episode.trim().isEmpty()){
                     etDeskripsi.setError("jumlah_episode Tidak Boleh Kosong");
                 }
-                else if(ulasan.trim().isEmpty()){
-                    etUlasan.setError("Ulasan Tidak Boleh Kosong");
-                }
                 else{
                     tambahSH();
                 }
@@ -69,7 +69,7 @@ public class TambahActivity extends AppCompatActivity {
 
     private void tambahSH(){
         APIRequestData ARD = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<ModelResponse> proses = ARD.ardCreate(judul, deskripsi, pemeran, jumlah_episode, ulasan);
+        Call<ModelResponse> proses = ARD.ardCreate(judul, deskripsi, pemeran, jumlah_episode, sutradara);
 
         proses.enqueue(new Callback<ModelResponse>() {
             @Override
