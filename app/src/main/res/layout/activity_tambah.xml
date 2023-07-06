@@ -5,12 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_margin="6dp"
+    android:background="#262626"
     tools:context=".Activity.TambahActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tambah Data"
+        android:text="Tambah List Film"
+        android:textColor="#BE804D"
         android:textSize="25sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
@@ -23,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Foto"
+        android:textColorHint="#BE804D"
         android:textSize="21sp"/>
 
     <EditText
@@ -30,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Judul Adaptasi"
+        android:textColorHint="#BE804D"
         android:textSize="21sp"/>
 
     <EditText
@@ -37,6 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nama Sutradara"
+        android:textColorHint="#BE804D"
         android:textSize="21sp"/>
 
     <EditText
@@ -44,6 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Deskripsi Adaptasi"
+        android:textColorHint="#BE804D"
         android:textSize="21sp"/>
 
     <EditText
@@ -51,6 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nama pemeran"
+        android:textColorHint="#BE804D"
         android:textSize="21sp"/>
 
     <EditText
@@ -58,6 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Jumlah Episode"
+        android:textColorHint="#BE804D"
         android:textSize="21sp"/>
 
 
@@ -66,8 +74,9 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="16dp"
+        android:backgroundTint="#BE804D"
         android:text="Simpan"
-        android:textSize="21sp"/>
-
+        android:textSize="21sp"
+        android:textColor="@color/black"/>
 
 </LinearLayout>

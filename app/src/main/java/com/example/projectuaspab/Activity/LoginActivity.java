@@ -57,35 +57,4 @@ public class LoginActivity extends AppCompatActivity {
     }
 }
 
-//    private void loginSH(){
-//        APIRequestData ARD = RetroServer.konekRetrofit().create(APIRequestData.class);
-//        Call<ModelResponse> proses = ARD.ardLogin(username, password);
-//
-//        proses.enqueue(new Callback<ModelResponse>() {
-//            @Override
-//            public void onResponse(Call<ModelResponse> call, Response<ModelResponse> response) {
-//                String kode = response.body().getKode();
-//                String pesan = response.body().getPesan();
-//                listPengguna = response.body().getDataPengguna();
-//
-//                if(kode.equals("0")){
-//                    Toast.makeText(LoginActivity.this, "Error! Username atau Password Salah!", Toast.LENGTH_SHORT).show();
-//                }
-//                else{
-//                    KL.setPref(KL.keySP_username, listPengguna.get(0).getUsername());
-//                    KL.setPref(KL.keySP_nama_lengkap, listPengguna.get(0).getNama_lengkap());
-//                    KL.setPref(KL.keySP_email, listPengguna.get(0).getEmail());
-//
-//                    Toast.makeText(LoginActivity.this, "Login Sukses", Toast.LENGTH_SHORT).show();
-//                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//                    finish();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ModelResponse> call, Throwable t) {
-//                Toast.makeText(LoginActivity.this, "Error! Gagal Terhubung ke Server", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
 

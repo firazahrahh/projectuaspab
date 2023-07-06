@@ -13,6 +13,8 @@ public class DetailActivity extends AppCompatActivity {
     private TextView tvId, tvLinkFoto, tvJudul, tvSutradara, tvDeskripsi, tvPemeran, tvJumlahEpisode;
     private String yId, yLinkFoto, yJudul, yDeskripsi, yPemeran, yJumlahEpisode, ySutradara;
 
+    private ImageView ivFoto;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,5 +36,7 @@ public class DetailActivity extends AppCompatActivity {
         tvDeskripsi = findViewById(R.id.tv_deskripsi);
         tvPemeran = findViewById(R.id.tv_pemeran);
         tvJumlahEpisode = findViewById(R.id.tv_jumlah_episode);
+
+        ivFoto = findViewById(R.id.iv_foto);
     }
 }
