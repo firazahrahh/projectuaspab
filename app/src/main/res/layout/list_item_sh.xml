@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="Sutradara"
+                android:text="Michael Cox"
                 android:textColor="#BE804D"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -75,7 +75,7 @@
                 android:maxLines="3"
                 android:minHeight="48dp"
                 android:textColor="#9E9E9E"
-                android:text="Deskripsi"
+                android:text="In the late Victorian era, Sherlock Holmes is the world's only..."
                 android:textSize="15sp"
                 app:layout_constraintStart_toEndOf="@+id/tv_link_foto"
                 app:layout_constraintTop_toBottomOf="@+id/tv_sutradara" />

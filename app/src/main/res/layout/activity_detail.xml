@@ -29,17 +29,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Judul"
+                android:text="Sherlock Holmes
+                (1984 TV series)"
                 android:textAlignment="center"
                 android:textColor="#BE804D"
-                android:textSize="35dp"
+                android:textSize="30dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_sutradara"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sutradara"
+                android:text="Michael Cox"
                 android:textColor="#BE804D"
                 android:textSize="23dp"
                 android:textStyle="normal" />
@@ -48,7 +49,7 @@
                 android:id="@+id/tv_pemeran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pemeran"
+                android:text="Jeremy Brett, David Burke"
                 android:textColor="#BE804D"
                 android:textSize="23dp"
                 android:textStyle="normal" />
@@ -57,7 +58,7 @@
                 android:id="@+id/tv_deskripsi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Deskripsi"
+                android:text="In the late Victorian era, Sherlock Holmes is the world's only consulting detective. His practice is largely with private clients, but he is also known to assist the police, often in the shape of Inspector Lestrade, when their cases overlap. He is assisted in his work by military veteran Dr. John Watson, with whom he shares rooms at 221B Baker Street."
                 android:textColor="#BE804D"
                 android:textSize="23dp"
                 android:textStyle="normal" />
@@ -66,7 +67,7 @@
                 android:id="@+id/tv_jumlah_episode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Jumlah Episode"
+                android:text="Jumlah Episode: 41"
                 android:textColor="#BE804D"
                 android:textSize="23dp"
                 android:textStyle="normal" />
