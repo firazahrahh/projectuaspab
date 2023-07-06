@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
             lmSH    = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             rvSH.setLayoutManager(lmSH);
 
-            tvWelcome.setText("Selamat Datang " + KL.getPref(MainActivity.this, keySPname));
 
             fabTambah.setOnClickListener(new View.OnClickListener() {
                 @Override

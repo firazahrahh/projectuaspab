@@ -46,8 +46,7 @@ public class AdapterSH extends RecyclerView.Adapter<AdapterSH.VHSH> {
     @Override
     public void onBindViewHolder(@NonNull VHSH holder, int postion){
         ModelSH SH = listSH.get(postion);
-        holder.tvId.setText(SH.getId());
-        holder.tvLinkFoto.setText(SH.getId());
+        holder.tvLinkFoto.setText(SH.getLink_foto());
         holder.tvJudul.setText(SH.getJudul());
         holder.tvSutradara.setText(SH.getSutradara());
         holder.tvDeskripsi.setText(SH.getDeskripsi());
