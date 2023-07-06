@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="6dp"
+    android:background="#262626"
     tools:context=".Activity.LoginActivity">
 
     <TextView
@@ -13,6 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Login Aplikasi"
         android:textSize="17sp"
+        android:textColor="#BE804D"
         android:textStyle="bold"
         android:layout_marginBottom="32dp"
         android:gravity="center_horizontal"/>
@@ -22,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
+        android:textColorHint="#BE804D"
         android:inputType="text"
         android:minHeight="48dp" />
 
@@ -30,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
+        android:textColorHint="#BE804D"
         android:inputType="textPassword"
         android:minHeight="48dp" />
 
@@ -39,6 +43,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_gravity="center_horizontal"
-        android:text="Login"/>
+        android:backgroundTint="#BE804D"
+        android:text="Login"
+        android:textColor="@color/black"/>
 
 </LinearLayout>
