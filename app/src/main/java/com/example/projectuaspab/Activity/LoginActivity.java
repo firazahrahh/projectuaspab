@@ -4,25 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.projectuaspab.API.APIRequestData;
-import com.example.projectuaspab.API.RetroServer;
-import com.example.projectuaspab.Model.ModelPengguna;
-import com.example.projectuaspab.Model.ModelResponse;
 import com.example.projectuaspab.R;
 import com.example.projectuaspab.Utility.KendaliLogin;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText etUsername, etPassword;

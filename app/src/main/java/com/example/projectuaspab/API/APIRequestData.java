@@ -15,6 +15,7 @@ public interface APIRequestData {
     @FormUrlEncoded
     @POST("create.php")
     Call<ModelResponse> ardCreate(
+            @Field("link_foto") String link_foto,
             @Field("judul") String judul,
             @Field("deskripsi") String deskripsi,
             @Field("pemeran") String pemeran,
@@ -26,6 +27,7 @@ public interface APIRequestData {
     @POST("update.php")
     Call<ModelResponse> ardUpdate(
             @Field("id") String id,
+            @Field("link_foto") String link_foto,
             @Field("judul") String judul,
             @Field("deskripsi") String deskripsi,
             @Field("pemeran") String pemeran,

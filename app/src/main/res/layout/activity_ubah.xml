@@ -19,6 +19,13 @@
         />
 
     <EditText
+        android:id="@+id/et_link_foto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Foto"
+        android:textSize="21sp"/>
+
+    <EditText
         android:id="@+id/et_judul"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

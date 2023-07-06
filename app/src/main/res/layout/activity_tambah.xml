@@ -17,11 +17,12 @@
         android:gravity="center_horizontal"
         android:layout_marginBottom="32dp"
         />
+
     <EditText
-        android:id="@+id/et_sutradara"
+        android:id="@+id/et_link_foto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nama Sutradara"
+        android:hint="Foto"
         android:textSize="21sp"/>
 
     <EditText
@@ -29,6 +30,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Judul Adaptasi"
+        android:textSize="21sp"/>
+
+    <EditText
+        android:id="@+id/et_sutradara"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama Sutradara"
         android:textSize="21sp"/>
 
     <EditText

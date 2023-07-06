@@ -47,28 +47,30 @@ public class AdapterSH extends RecyclerView.Adapter<AdapterSH.VHSH> {
     public void onBindViewHolder(@NonNull VHSH holder, int postion){
         ModelSH SH = listSH.get(postion);
         holder.tvId.setText(SH.getId());
+        holder.tvLinkFoto.setText(SH.getId());
         holder.tvJudul.setText(SH.getJudul());
+        holder.tvSutradara.setText(SH.getSutradara());
         holder.tvDeskripsi.setText(SH.getDeskripsi());
         holder.tvPemeran.setText(SH.getPemeran());
-        holder.tvJumlahEpisode.setText(SH.getPemeran());
-        holder.tvUlasan.setText(SH.getPemeran());
+        holder.tvJumlahEpisode.setText(SH.getJumlah_episode());
     }
 
     @Override
     public int getItemCount(){ return listSH.size(); }
 
     public class VHSH extends RecyclerView.ViewHolder{
-        TextView tvId, tvJudul, tvDeskripsi, tvPemeran, tvJumlahEpisode, tvUlasan;
+        TextView tvId, tvLinkFoto, tvJudul, tvSutradara, tvDeskripsi, tvPemeran, tvJumlahEpisode;
 
         public VHSH(@NonNull View itemView){
             super(itemView);
 
             tvId = itemView.findViewById(R.id.tv_id);
+            tvLinkFoto = itemView.findViewById(R.id.tv_link_foto);
             tvJudul = itemView.findViewById(R.id.tv_judul);
+            tvSutradara = itemView.findViewById(R.id.tv_sutradara);
             tvDeskripsi = itemView.findViewById(R.id.tv_deskripsi);
             tvPemeran = itemView.findViewById(R.id.tv_pemeran);
             tvJumlahEpisode = itemView.findViewById(R.id.tv_jumlah_episode);
-            tvUlasan = itemView.findViewById(R.id.tv_ulasan);
 
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
@@ -91,11 +93,12 @@ public class AdapterSH extends RecyclerView.Adapter<AdapterSH.VHSH> {
                         public void onClick(DialogInterface dialog, int which) {
                             Intent pindah = new Intent(ctx, UbahActivity.class);
                             pindah.putExtra("xId", tvId.getText().toString());
+                            pindah.putExtra("xLinkFoto", tvLinkFoto.getText().toString());
                             pindah.putExtra("xJudul", tvJudul.getText().toString());
+                            pindah.putExtra("xSutradara", tvSutradara.getText().toString());
                             pindah.putExtra("xDeskripsi", tvDeskripsi.getText().toString());
                             pindah.putExtra("xPemeran", tvPemeran.getText().toString());
                             pindah.putExtra("xJumlahEpisode", tvJumlahEpisode.getText().toString());
-                            pindah.putExtra("xUlasan", tvUlasan.getText().toString());
                             ctx.startActivity(pindah);
                         }
                     });

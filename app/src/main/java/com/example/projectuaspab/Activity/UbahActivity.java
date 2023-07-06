@@ -19,10 +19,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 public class UbahActivity extends AppCompatActivity {
 
-    private String yId, yJudul, yDeskripsi, yPemeran, yJumlahEpisode, ySutradara;
-    private EditText etJudul, etDeskripsi, etPemeran, etJumlahEpisode, etSutradara;
+    private String yId, yLinkFoto, yJudul, yDeskripsi, yPemeran, yJumlahEpisode, ySutradara;
+    private EditText etLinkFoto, etJudul, etDeskripsi, etPemeran, etJumlahEpisode, etSutradara;
     private Button btnUbah;
-    private String judul, deskripsi, pemeran, jumlah_episode, sutradara;
+    private String link_foto, judul, deskripsi, pemeran, jumlah_episode, sutradara;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -31,12 +31,14 @@ public class UbahActivity extends AppCompatActivity {
 
         Intent ambil = getIntent();
         yId = ambil.getStringExtra("xId");
+        yLinkFoto = ambil.getStringExtra("xLinkFoto");
         yJudul = ambil.getStringExtra("xJudul");
         ySutradara = ambil.getStringExtra("xSutradara");
         yDeskripsi = ambil.getStringExtra("xDeskripsi");
         yPemeran = ambil.getStringExtra("xPemeran");
         yJumlahEpisode = ambil.getStringExtra("xJumlahEpisode");
 
+        etLinkFoto = findViewById(R.id.et_link_foto);
         etJudul = findViewById(R.id.et_judul);
         etSutradara = findViewById(R.id.et_sutradara);
         etDeskripsi = findViewById(R.id.et_deskripsi);
@@ -44,6 +46,7 @@ public class UbahActivity extends AppCompatActivity {
         etJumlahEpisode = findViewById(R.id.et_jumlah_episode);
         btnUbah = findViewById(R.id.btn_ubah);
 
+        etLinkFoto.setText(yLinkFoto);
         etJudul.setText(yJudul);
         etSutradara.setText(ySutradara);
         etDeskripsi.setText(yDeskripsi);
@@ -53,17 +56,21 @@ public class UbahActivity extends AppCompatActivity {
         btnUbah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                link_foto = etLinkFoto.getText().toString();
                 judul = etJudul.getText().toString();
-                judul = etSutradara.getText().toString();
+                sutradara = etSutradara.getText().toString();
                 deskripsi = etDeskripsi.getText().toString();
                 pemeran = etPemeran.getText().toString();
                 jumlah_episode = etJumlahEpisode.getText().toString();
 
-                if(judul.trim().isEmpty()){
+                if(link_foto.trim().isEmpty()){
+                    etLinkFoto.setError("Foto Tidak Boleh Kosong");
+                }
+                else if(judul.trim().isEmpty()){
                     etJudul.setError("Judul Tidak Boleh Kosong");
                 }
                 else if(sutradara.trim().isEmpty()){
-                    etSutradara.setError("Ulasan Tidak Boleh Kosong");
+                    etSutradara.setError("Sutradara Tidak Boleh Kosong");
                 }
                 else if(deskripsi.trim().isEmpty()){
                     etDeskripsi.setError("Deskripsi Tidak Boleh Kosong");
@@ -83,7 +90,7 @@ public class UbahActivity extends AppCompatActivity {
 
     private void ubahSH(){
         APIRequestData ARD = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<ModelResponse> proses = ARD.ardUpdate(yId, judul, deskripsi, pemeran, jumlah_episode, sutradara);
+        Call<ModelResponse> proses = ARD.ardUpdate(yId, link_foto, judul, sutradara, deskripsi, pemeran, jumlah_episode);
 
         proses.enqueue(new Callback<ModelResponse>() {
             @Override

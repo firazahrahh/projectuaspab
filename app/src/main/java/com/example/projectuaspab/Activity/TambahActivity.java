@@ -19,17 +19,18 @@ import retrofit2.Response;
 
 public class TambahActivity extends AppCompatActivity {
 
-    private EditText etJudul, etDeskripsi, etPemeran, etJumlahEpisode, etSutradara;
+    private EditText etLinkFoto, etJudul, etDeskripsi, etPemeran, etJumlahEpisode, etSutradara;
 
     private Button btnSimpan;
 
-    private String judul, deskripsi, pemeran, jumlah_episode, sutradara;
+    private String link_foto, judul, deskripsi, pemeran, jumlah_episode, sutradara;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah);
 
+        etLinkFoto =findViewById(R.id.et_link_foto);
         etJudul = findViewById(R.id.et_judul);
         etSutradara = findViewById(R.id.et_sutradara);
         etDeskripsi = findViewById(R.id.et_deskripsi);
@@ -38,14 +39,18 @@ public class TambahActivity extends AppCompatActivity {
 
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+                link_foto = etLinkFoto.getText().toString();
                 judul = etJudul.getText().toString();
                 sutradara = etSutradara.getText().toString();
                 deskripsi = etDeskripsi.getText().toString();
                 pemeran = etPemeran.getText().toString();
                 jumlah_episode = etJumlahEpisode.getText().toString();
 
-                if(judul.trim().isEmpty()){
+                if(link_foto.trim().isEmpty()){
+                    etLinkFoto.setError("Foto Tidak Boleh Kosong");
+                }
+                else if(judul.trim().isEmpty()){
                     etJudul.setError("Judul Tidak Boleh Kosong");
                 }
                 else if(sutradara.trim().isEmpty()){
@@ -69,7 +74,7 @@ public class TambahActivity extends AppCompatActivity {
 
     private void tambahSH(){
         APIRequestData ARD = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<ModelResponse> proses = ARD.ardCreate(judul, deskripsi, pemeran, jumlah_episode, sutradara);
+        Call<ModelResponse> proses = ARD.ardCreate(link_foto, judul, sutradara, deskripsi, pemeran, jumlah_episode);
 
         proses.enqueue(new Callback<ModelResponse>() {
             @Override

@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             fabTambah   = findViewById(R.id.fab_tambah);
             fabLogout   = findViewById(R.id.fab_logout);
             pbSH        = findViewById(R.id.pb_sh);
-            tvWelcome   = findViewById(R.id.tv_welcome);
 
             lmSH    = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             rvSH.setLayoutManager(lmSH);

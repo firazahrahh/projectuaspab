@@ -2,9 +2,11 @@ package com.example.projectuaspab.Model;
 
 public class ModelSH {
 
-    private String id, judul, deskripsi, pemeran, jumlah_episode, sutradara;
+    private String id,link_foto,  judul, deskripsi, pemeran, jumlah_episode, sutradara;
 
     public String getId() { return id; }
+
+    public String getLink_foto() {return link_foto;}
 
     public String getJudul() { return judul; }
 

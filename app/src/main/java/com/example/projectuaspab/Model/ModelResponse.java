@@ -8,8 +8,6 @@ public class ModelResponse {
 
     private List<ModelSH> data;
 
-    private List<ModelPengguna> dataPengguna;
-
     public String getKode() {
         return kode;
     }
@@ -19,5 +17,4 @@ public class ModelResponse {
     }
 
     public List<ModelSH> getData() { return data;}
-    public List<ModelPengguna> getDataPengguna() { return dataPengguna; }
 }
